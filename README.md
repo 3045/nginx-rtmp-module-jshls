@@ -8,7 +8,7 @@ This module when installed into the working directory as the previous module (fo
 
 ### Why?
 
-CDN providers like Cloudflare will advertise commonly accessed files, such as JavaScript files, when requested. After the first time it has been requested, the JavaScript file is generally stored in their global edge cache, so further requests never make it to the origin, meaning less work for the origin.
+CDN providers like Cloudflare will cache commonly accessed files of certain file types, such as JavaScript files when requested. After the first time it has been requested, the JavaScript file is generally stored in their global edge cache, so further requests never make it to the origin, meaning less work for the origin; the file is delivered 100% by Cloudflare (which is how their network speeds up sites, caching plays a big part if you have lots of content that is able to be cached)
 
 This module uses the same idea; since Cloudflare does not cache .ts files intentionally (since you're technically not supposed to stream over Cloudflare) we will instead serve the exact same files to users, except with a .js extension. This results in the live media being cached and therefore meaning less load on the origin server. Using this setup, we are able to achieve a caching rate of over 99.5% when delivering livestream media, delivering the same media to thousands of more users whilst using less resources on the origin.
 

@@ -1,5 +1,13 @@
 # NGINX RTMP module - JS HLS
 
+## Update 2024
+
+### I fucked up
+So it turns out that the automatic cleanup mechanism to remove stale segments doesn't work with this version. A friend tested it instead recompiling with the new filename, so that's probably the issue.
+
+### It's a faster way to do it
+I can't be assed explaining to you how to install a prebuilt module, it's simple but really the better way to do it than replacing the original version shipped in your distributions repositories.
+
 ## What and why?
 
 ### What?
@@ -16,4 +24,6 @@ This module uses the same idea; since Cloudflare does not cache .ts files intent
 
 I edited this module in less than a few minutes using HxD. It is so easy to do, you can do it yourself. This is obviously the wrong way to do it; the correct way is to fork the repository of the original project, edit the code, compile it, test it and if it works publish the code (and perhaps the prebuilt module too) but I did not want to compile it in the first instance and have to deal with all the issues that comes along with it, so this works for now.
 
-If someone is willing to do the work for me, please be my guest but this works for now and I am happy with it.
+~~If someone is willing to do the work for me, please be my guest but this works for now and I am happy with it.~~
+
+My friend did the work. I'll add it later if I can be assed.
